@@ -1,0 +1,29 @@
+---
+title: "Gov 50 Final Project"
+author: Sally E. Edwards
+description: "My Final Project"
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+## Project thoughts
+
+I am interested in exploring data related to party identification in Texas as related to distance from the Texas/Mexico border.  The border debate which has taken over the GOP often portrays immigration issue as practically concerning for voters who live close to the border, while citizens who live farther away are more likely to take a moralistic view of the situation.  However, I would like to evaluate the extent of this truth -- as a Texan with family located in border cities and more interior towns, I can say from anecdotal evidence that this isn't always the case. I believe that using data science to inform the conversation could help to develop a more nuanced understanding of both the issue and Texan voter's opinions. 
+
+## Milestone 2 -- Hypothesis and Data (13 October 2023)
+
+For my final project, I want to examine the relationship between opinion on border security in Texas as compared to an individual’s hometown in Texas.  Simply put, does your proximity to the Texas/Mexico border have any effect on your view of the issue? As border security has become an increasingly salient issue on the national political stage, it is all too easy for national politicians to make sweeping generalizations about the opinions of Texas voters without diving into the nuances of the multifaceted demographic.  Immigration has become a central tenet of the GOP platform, and political figures — like our Governor, Greg Abbott or Senator Ted Cruz — have repeatedly framed the issue as immediately pressing and easily positionable.  However, I believe that individuals who live close to border towns will have a more nuanced view of this issue, possibly due to the fact that they have a higher personal relationship to the immigration process. My hypothesis is that individuals who are from border cities will view immigration as less of a pressing issue than individuals who live in rural areas farther away from the border.  In order to study the hypothesis, I plan to use data from August 2023 University of Texas/Texas Politics Project Poll.  My explanatory variable will be an individual’s zip code (“zipcode”), collected from individual respondents, and the outcome variable will be an individual’s view of immigration.  This is quantified in the Q20_grid_A, wherein individuals rank how seriously the perceive the threat of immigration, from “extremely serious” to “not serious” in a gradient of 5, along with options for “no opinion” or to skip.  If individuals with zip codes along the border rank their preferences from “not very serious” to “not serious” consistently while individuals in rural area rank it as a serious issue. then I believe my hypothesis will be proven.  However, if the opposite is true, such that individuals with zip codes along the border rank immigration as a serious issue (from 1-2) while individuals in rural area rank it as less serious — or if they align— then my hypothesis will be disproven.
+
+Data Sourced from the Texas Politics Project and the University of Texas at Austin: August 2023 University of Texas/Texas Politics Project Poll https://texaspolitics.utexas.edu/polling-data-archive
+
+Codebook -- paragraph references Q20 and “zipcode":
+https://texaspolitics.utexas.edu/sites/texaspolitics.utexas.edu/files/utex0055d_codebook.pdf
+
+Poll Summary: 
+https://texaspolitics.utexas.edu/sites/texaspolitics.utexas.edu/files/202308_poll_topline.pdf
+Poll Crosstabs:
+
+(https://texaspolitics.utexas.edu/sites/texaspolitics.utexas.edu/files/202308_poll_crosstabs.pdf
+
+
