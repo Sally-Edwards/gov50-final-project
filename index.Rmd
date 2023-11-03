@@ -25,3 +25,45 @@ https://texaspolitics.utexas.edu/sites/texaspolitics.utexas.edu/files/202308_pol
 Poll Crosstabs:
 
 (https://texaspolitics.utexas.edu/sites/texaspolitics.utexas.edu/files/202308_poll_crosstabs.pdf
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library("haven")
+```
+
+First we download the `haven` package to import .sav files 
+
+```{r, eval = FALSE, message=FALSE}
+install.packages ("haven")
+```
+
+Second we call the data
+
+```{r}
+library(haven)
+UT_data <- read_sav("utex0055e_output.sav")
+UT_data |>
+  head()
+```
+
+Let's keep only zip codes for El Paso
+
+```{r}
+library(tidyverse)
+UT_data <- UT_data |>
+  mutate(border_zip = if_else(zipcode == 79901 | 79902 | 79903 | 79904 | 79905 | 79906 | 79907 | 79908 | 79910 | 79911 | 79912 | 79913 | 79914 | 79915 | 79916 | 79917 | 79918 | 79920 | 79922 | 79923 | 79924 | 79925 | 79926 | 79927 | 79929 | 79930 | 79931 | 79932 | 79934 | 79935 | 79936 | 79937 | 79938 | 79940 | 79941 | 79942 | 79943 | 79944 | 79945| 79946 | 79947 | 79948 | 79949 | 79950 | 79951 | 79952 | 79953 | 79954 | 79955 | 79958 | 79960 | 79961 | 79966 | 79968 | 79973 | 79974 | 79975 | 79976 | 79977 | 79978 | 79980 | 79982 | 79983 | 79984 | 79985 | 79986 | 79987 | 79988 | 79989 | 79990 | 79991 | 79992 | 79993 | 79994 | 79995 | 79996 | 79997 | 79998 | 79999, "El Paso", "Other"))
+
+```
+
+Then we plot
+
+```{r}
+El_Paso_Scatter <- ggplot(data = UT_data, mapping = aes(x = border_zip, y = Q20A)) +
+                        geom_jitter(alpha = 0.75, color = "violet")+
+  labs( x = "City",
+        y = "How Seriously Immigration is Viewed as Threat",
+        title = "Immigration Ideology in El Paso, TX")
+El_Paso_Scatter
+```
