@@ -1,0 +1,8 @@
+```{r}
+install.packages("distill")
+```
+
+```{r}
+library(distill)
+create_article("article.Rmd")
+```
