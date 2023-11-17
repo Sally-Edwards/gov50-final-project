@@ -1,3 +1,4 @@
+
 ---
 title: "Gov 50 Final Project"
 author: Sally E. Edwards
@@ -66,4 +67,29 @@ El_Paso_Scatter <- ggplot(data = UT_data, mapping = aes(x = border_zip, y = Q20A
         y = "How Seriously Immigration is Viewed as Threat",
         title = "Immigration Ideology in El Paso, TX")
 El_Paso_Scatter
+```
+
+##Milestone 4
+
+First, we calculate the average view toward immigration for individuals living in El Paso.  
+```{r}
+Border_Views <- UT_data |>
+   mutate(border_zipcode = if_else(zipcode == 79901 | 79902 | 79903 | 79904 | 79905 | 79906 | 79907 | 79908 | 79910 | 79911 | 79912 | 79913 | 79914 | 79915 | 79916 | 79917 | 79918 | 79920 | 79922 | 79923 | 79924 | 79925 | 79926 | 79927 | 79929 | 79930 | 79931 | 79932 | 79934 | 79935 | 79936 | 79937 | 79938 | 79940 | 79941 | 79942 | 79943 | 79944 | 79945| 79946 | 79947 | 79948 | 79949 | 79950 | 79951 | 79952 | 79953 | 79954 | 79955 | 79958 | 79960 | 79961 | 79966 | 79968 | 79973 | 79974 | 79975 | 79976 | 79977 | 79978 | 79980 | 79982 | 79983 | 79984 | 79985 | 79986 | 79987 | 79988 | 79989 | 79990 | 79991 | 79992 | 79993 | 79994 | 79995 | 79996 | 79997 | 79998 | 79999, "El Paso", "Other")) |>
+  group_by(border_zipcode) |>
+  summarize(ideology_mean = mean(Q20A)) 
+  
+Border_Views
+```
+
+Then, we create the histogram to compare the distribution of beliefs about immigration within the entire data set to the average view on immigration in El Paso. 
+```{r}
+zip_hist <- ggplot(data = UT_data, mapping = aes(x = Q20A)) +
+                        geom_histogram(binwidth = 0.5,
+                                       fill = "violet") + 
+  geom_vline(mapping = aes(xintercept = 1.79833), color = "navy", width = .25) +
+  labs(title = "Distribution of Immigration Ideology",
+       x = "View on Immigration", 
+       y = "Respondents", 
+       subtitle = "Views on immigration categorized with 1 being most welcoming and 4 being most restrictive.")
+zip_hist
 ```
