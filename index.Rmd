@@ -93,3 +93,4 @@ zip_hist <- ggplot(data = UT_data, mapping = aes(x = Q20A)) +
        subtitle = "Views on immigration categorized with 1 being most welcoming and 4 being most restrictive.")
 zip_hist
 ```
+This histogram shows that there is not great variance between the average view of immigration held by individuals who live on the border and the overall distribution of views on immigration held by the larger dataset.  The distribution of the dataset's overall ideology is clustered around the 1 and 2 range (views more favorable to the process of immigration), and the average value of the view of individuals who live on the border is approximately 1.80.  Thus, this indicate that my hypothesis was not true, and that the treatment of living in a border city does not have a substantive effect on views toward immigration.  
